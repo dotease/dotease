@@ -27,7 +27,8 @@
     "release": "semantic-release",
     "add-rule": "ts-node scripts/add-rule",
     "update": "ts-node scripts/update",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "publish": "publish --access public"
   },
   "peerDependencies": {
     "eslint": ">=5.16.0"

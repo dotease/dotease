@@ -2,23 +2,24 @@ name: CI
 on: [push]
 jobs:
   build:
+    name: push to npm
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-        run: npm ci
-      - name: Lint
-        run: npm run lint
-      - name: Test
-        run: npm test
+          fetch-depth: 0
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: publish to npm
+        run: yarn publish
         env:
-          CI: true
-      - name: Build
-        run: npm run build
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
