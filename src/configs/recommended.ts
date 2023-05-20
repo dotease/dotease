@@ -2,6 +2,6 @@
 
 export const recommended = {
   rules: {
-    "/must-image-alt": "error"
+    "/require-image-alt": "error"
   }
 }
