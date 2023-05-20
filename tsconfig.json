@@ -12,6 +12,7 @@
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "noImplicitAny": false,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
