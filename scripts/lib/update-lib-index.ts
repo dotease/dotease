@@ -14,9 +14,7 @@ export const configs = {
 };
 
 export const rules = {
-    ${rules
-      .map((rule) => `'${rule.name}': ${camelize(rule.name)}`)
-      .join(',\n    ')}
+    ${rules.map((rule) => `'${rule.name}': ${camelize(rule.name)}`).join(',\n    ')}
 };
 `;
 
@@ -24,6 +22,6 @@ export const rules = {
   const lint = new ESLint({ fix: true });
   const lintResults = await lint.lintText(rawContent);
   const content = lintResults[0].output || rawContent;
-  
-  fs.writeFileSync(filePath, content);    
+
+  fs.writeFileSync(filePath, content);
 })();
