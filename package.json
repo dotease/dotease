@@ -1,6 +1,6 @@
 {
-  "name": "@dotease/eslint-plugin-",
-  "version": "1.0.0",
+  "name": "@dotease/eslint-plugin",
+  "version": "0.0.2",
   "description": "",
   "engines": {
     "node": ">=8.10.0"
@@ -62,9 +62,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/???/eslint-plugin-xxxx.git"
+    "url": "git+https://github.com/dotease/dotease"
   },
   "keywords": [
+    "dotease",
+    "accessibility",
+    "seo",
     "typescript",
     "template",
     "eslint",
@@ -74,10 +77,11 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/???/eslint-plugin-xxxx/issues"
+    "url": "https://github.com/dotease/dotease/issues"
   },
-  "homepage": "https://github.com/???/eslint-plugin-xxxx#readme",
+  "homepage": "https://github.com/dotease/dotease#readme",
   "dependencies": {
+    "@typescript-eslint/utils": "^5.59.8",
     "es-html-parser": "^0.0.8",
     "eslint-html-parser": "^6.8.2",
     "eslint-plugin-html": "^7.1.0"

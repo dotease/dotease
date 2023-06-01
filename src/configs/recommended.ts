@@ -2,6 +2,7 @@
 
 export const recommended = {
   rules: {
-    "/require-image-alt": "error"
-  }
-}
+    'require-image-alt': 'warn',
+    'promote-semantic-elements-for-accessibility': 'warn',
+  },
+};

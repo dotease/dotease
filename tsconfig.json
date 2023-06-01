@@ -14,10 +14,14 @@
     "resolveJsonModule": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "jsx": "preserve"
   },
   "ts-node": {
     "esm": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    },
     "experimentalSpecifierResolution": "node"
   },
   "include": ["src"]
