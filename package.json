@@ -83,7 +83,7 @@
   "homepage": "https://github.com/dotease/dotease#readme",
   "dependencies": {
     "@types/estree": "^1.0.1",
-    "@typescript-eslint/utils": "^5.59.8",
+    "@typescript-eslint/utils": "5.55.0",
     "es-html-parser": "^0.0.8",
     "eslint-html-parser": "^6.8.2",
     "eslint-plugin-html": "^7.1.0"
