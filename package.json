@@ -36,6 +36,7 @@
     "@html-eslint/parser": "^0.19.0",
     "@types/eslint": "^8.21.2",
     "@types/jest": "^29.4.2",
+    "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "eslint": "^8.36.0",
@@ -81,6 +82,7 @@
   },
   "homepage": "https://github.com/dotease/dotease#readme",
   "dependencies": {
+    "@types/estree": "^1.0.1",
     "@typescript-eslint/utils": "^5.59.8",
     "es-html-parser": "^0.0.8",
     "eslint-html-parser": "^6.8.2",
