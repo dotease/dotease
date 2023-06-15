@@ -36,10 +36,6 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://www.npmjs.com/package/@dotease/eslint-plugin'
-          cache: 'pnpm'
-
-      - name: Install node_modules
-        run: pnpm install
 
       - run: pnpm ci
 
