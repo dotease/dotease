@@ -38,6 +38,6 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://www.npmjs.com/package/@dotease/eslint-plugin'
 
-      - run: pnpm publish --no-git-checks
+      - run: pnpm publish --dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
