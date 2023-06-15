@@ -43,6 +43,11 @@ tester.run('promote-semantic-elements-for-accessibility', promoteSemanticElement
       errors: ['Use <nav> instead of <div role="navigation">'],
     },
     {
+      filename: 'invalid_div_id_navigation.tsx',
+      code: `(props: props) => <div id="navigation"></div>`,
+      errors: ['Use <nav> instead of <div id="navigation">'],
+    },
+    {
       filename: 'invalid_div_main.tsx',
       code: `(props: props) => <div role="main"></div>`,
       errors: ['Use <main> instead of <div role="main">'],
