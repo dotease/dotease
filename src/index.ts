@@ -113,3 +113,8 @@ export const rules = {
   'require-img-alt': requireImgAlt,
   'promote-semantic-elements-for-accessibility': promoteSemanticElementsForAccessibility,
 };
+
+module.exports = {
+  configs,
+  rules,
+};

@@ -1,5 +1,7 @@
 import { Rule } from 'eslint';
-import { ARIARole, HtmlNode } from '../index';
+import { ARIARole } from '../index';
+import { replaceableRolesMap } from '../utils/utils';
+import { TSESTree } from '@typescript-eslint/types';
 
 const promoteSemanticElementsForAccessibility: Rule.RuleModule = {
   meta: {
@@ -13,60 +15,44 @@ const promoteSemanticElementsForAccessibility: Rule.RuleModule = {
 
   create(context) {
     return {
-      JSXOpeningElement(node) {
-        const nodeName = node.name.name;
-        const attributes = node.attributes;
+      JSXAttribute(node) {
+        const attributeNode = node as TSESTree.JSXAttribute;
+        const attributeName = attributeNode.name.name;
 
-        for (const attribute of attributes) {
-          const name = attribute.name.name;
-
-          if (name === 'role') {
-            const value = attribute.value.value as ARIARole;
-
-            const replaceableRolesMap = new Map<ARIARole, HtmlNode>([
-              ['banner', 'header'],
-              ['navigation', 'nav'],
-              ['main', 'main'],
-              ['contentinfo', 'footer'],
-              ['complementary', 'aside'],
-              ['form', 'form'],
-              ['search', 'form'],
-              ['textbox', 'input'],
-              ['checkbox', 'input'],
-              ['combobox', 'select'],
-              ['listbox', 'select'],
-              ['menu', 'ul'],
-              ['button', 'button'],
-              ['link', 'a'],
-              ['listitem', 'li'],
-              ['list', 'ul'],
-              ['cell', 'td'],
-              ['row', 'tr'],
-              ['table', 'table'],
-              ['rowgroup', 'tbody'],
-              ['columnheader', 'th'],
-              ['rowheader', 'th'],
-              ['grid', 'table'],
-              ['article', 'article'],
-              ['dialog', 'dialog'],
-              ['document', 'article'],
-              ['feed', 'article'],
-              ['figure', 'figure'],
-              ['img', 'img'],
-              ['log', 'pre'],
-            ]);
-
-            for (const [role, replacement] of replaceableRolesMap) {
-              if (value === role) {
-                context.report({
-                  node,
-                  message: `Use <${replacement}> instead of <${nodeName} role="${role}">`,
-                });
-              }
+        if (['role', 'id'].includes(attributeName as string)) {
+          const attributeValue = attributeNode.value as TSESTree.Literal;
+          const value = attributeValue.value as ARIARole;
+          for (const [role, replacement] of replaceableRolesMap) {
+            if (value === role) {
+              context.report({
+                node,
+                message: `Use <${replacement}> instead of <div ${attributeName}="${role}">`,
+              });
             }
           }
         }
       },
+      // JSXOpeningElement(node) {
+      //   const nodeName = node.name.name;
+      //   const attributes = node.attributes;
+      //
+      //   for (const attribute of attributes) {
+      //     const name = attribute.name.name;
+      //
+      //     if (name === 'role') {
+      //       const value = attribute.value.value as ARIARole;
+      //
+      //       for (const [role, replacement] of replaceableRolesMap) {
+      //         if (value === role) {
+      //           context.report({
+      //             node,
+      //             message: `Use <${replacement}> instead of <${nodeName} role="${role}">`,
+      //           });
+      //         }
+      //       }
+      //     }
+      //   }
+      // },
     };
   },
 };
