@@ -39,6 +39,8 @@ jobs:
           registry-url: 'https://www.npmjs.com/package/@dotease/eslint-plugin'
 
       - run: pnpm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - run: pnpm publish
         env:
