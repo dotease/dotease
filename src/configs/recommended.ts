@@ -2,6 +2,7 @@
 
 export const recommended = {
   rules: {
-    "reatom/example-rule": "error"
-  }
-}
+    'require-image-alt': 'warn',
+    'promote-semantic-elements-for-accessibility': 'warn',
+  },
+};

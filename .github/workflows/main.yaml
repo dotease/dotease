@@ -1,25 +1,31 @@
-name: CI
-on: [push]
+name: Test Integration
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
+
 jobs:
   build:
-    name: push to npm
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v2
+      - run: npm install -g pnpm @antfu/ni
 
-      - name: setup node
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org/'
+          node-version: '18'
+          cache: 'pnpm'
 
-      - name: install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Install Dependencies
+        run: pnpm install
 
-      - name: publish to npm
-        run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Lint
+        run: pnpm run lint:ts
+
+      - name: Test
+        run: pnpm run test
+
+      - name: Build
+        run: pnpm run build

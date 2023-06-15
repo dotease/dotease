@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "NodeNext",
+    "target": "es2016",
+    "module": "esnext",
     "rootDir": "src",
     "outDir": "dist",
     "declaration": false,
@@ -12,11 +12,16 @@
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "noImplicitAny": false,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "jsx": "preserve"
   },
   "ts-node": {
     "esm": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    },
     "experimentalSpecifierResolution": "node"
   },
   "include": ["src"]

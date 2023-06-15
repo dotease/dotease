@@ -38,6 +38,6 @@ fs.writeFileSync(
     .readFileSync(filePath, 'utf8')
     .replace(
       /<!--RULE_TABLE_BEGIN-->[\s\S]*<!--RULE_TABLE_END-->/u,
-      `<!--RULE_TABLE_BEGIN-->\n${content}\n<!--RULE_TABLE_END-->`
-    )
+      `<!--RULE_TABLE_BEGIN-->\n${content}\n<!--RULE_TABLE_END-->`,
+    ),
 );

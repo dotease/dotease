@@ -19,7 +19,9 @@ const addRule = () => {
 
   // Require rule type.
   if (!type) {
-    console.error('Usage: npm run add-rule <RULE_ID> <RULE_TYPE> \n\npossible <RULE_TYPE>: problem | suggestion | layout');
+    console.error(
+      'Usage: npm run add-rule <RULE_ID> <RULE_TYPE> \n\npossible <RULE_TYPE>: problem | suggestion | layout',
+    );
     process.exitCode = 1;
     return;
   }
@@ -31,10 +33,7 @@ const addRule = () => {
   // Overwrite check.
   for (const filePath of [docPath, rulePath, testPath]) {
     if (fs.existsSync(filePath)) {
-      console.error(
-        '%o has existed already.',
-        path.relative(process.cwd(), filePath)
-      );
+      console.error('%o has existed already.', path.relative(process.cwd(), filePath));
       process.exitCode = 1;
       return;
     }
@@ -55,7 +54,7 @@ const addRule = () => {
 ## Options
 
 (TODO: what do options exist?)
-`
+`,
   );
 
   fs.writeFileSync(
@@ -79,7 +78,7 @@ const rule: Rule.RuleModule = {
 };
 
 export default rule;
-`
+`,
   );
 
   fs.writeFileSync(
@@ -99,7 +98,7 @@ tester.run("${ruleId}", rule, {
   valid: [],
   invalid: [],
 });
-`
+`,
   );
 };
 
