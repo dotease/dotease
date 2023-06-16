@@ -1,0 +1,44 @@
+name: Publish Package to npmjs
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        run: npm install -g pnpm @antfu/ni
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Install node_modules
+        run: pnpm install
+
+      - name: Build stage
+        run: pnpm build
+
+  publish:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        run: npm install -g pnpm @antfu/ni
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - run: pnpm install
+
+      - run: pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
