@@ -9,4 +9,6 @@ export const ErrorMessage = {
   ) {
     return `Use <${replacement}> instead of <${nodeName} ${attributeName}="${roleName}">`;
   },
+  NO_INLINE_STYLE: 'Do not use the style element. Please create a css class or identifier in order to style your ' +
+      'element',
 };
