@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@dotease/eslint-plugin':
-    specifier: ^0.0.4
-    version: 0.0.4(eslint@8.36.0)(typescript@4.3.2)
   '@types/estree':
     specifier: ^1.0.1
     version: 1.0.1
@@ -425,23 +422,6 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
-
-  /@dotease/eslint-plugin@0.0.4(eslint@8.36.0)(typescript@4.3.2):
-    resolution: {integrity: sha512-Z4TGURAZqrzIvJLaSX2LdFD9BEkGObH7tOm/75Fk8N4nELl5wlMNIEjjRtZMpFfsPn23HDbwAtniD8qWctZ7cA==}
-    engines: {node: '>=8.10.0'}
-    peerDependencies:
-      eslint: '>=5.16.0'
-    dependencies:
-      '@types/estree': 1.0.1
-      '@typescript-eslint/utils': 5.55.0(eslint@8.36.0)(typescript@4.3.2)
-      es-html-parser: 0.0.8
-      eslint: 8.36.0
-      eslint-html-parser: 6.8.2
-      eslint-plugin-html: 7.1.0
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-    dev: false
 
   /@esbuild/android-arm64@0.17.19:
     resolution: {integrity: sha512-KBMWvEZooR7+kzY0BtbTQn0OAYY7CsiydT63pVEaPtVYF0hXbUaOyZog37DKxK7NF3XacBJOpYT4adIJh+avxA==}
