@@ -48,6 +48,11 @@ tester.run('promote-semantic-elements-for-accessibility', promoteSemanticElement
       errors: ['Use <nav> instead of <div id="navigation">'],
     },
     {
+      filename: 'invalid_section_role_navigation.tsx',
+      code: `(props: props) => <section role="navigation"></section>`,
+      errors: ['Use <nav> instead of <section role="navigation">'],
+    },
+    {
       filename: 'invalid_div_main.tsx',
       code: `(props: props) => <div role="main"></div>`,
       errors: ['Use <main> instead of <div role="main">'],
@@ -160,6 +165,16 @@ tester.run('promote-semantic-elements-for-accessibility', promoteSemanticElement
     {
       filename: 'invalid_div_grid.tsx',
       code: `(props: props) => <div role="grid"></div>`,
+      errors: ['Use <table> instead of <div role="grid">'],
+    },
+    {
+      filename: 'invalid_div_rowheader.tsx',
+      code: `(props: props) => <div role={"rowheader"}></div>`,
+      errors: ['Use <th> instead of <div role="rowheader">'],
+    },
+    {
+      filename: 'invalid_div_grid.tsx',
+      code: `(props: props) => <div role={"grid"}></div>`,
       errors: ['Use <table> instead of <div role="grid">'],
     },
   ],
