@@ -1,4 +1,5 @@
 import {ARIARole, HtmlNode} from "../index";
+import {TSESTree} from "@typescript-eslint/types";
 
 export const replaceableRolesMap = new Map<ARIARole, HtmlNode>([
     ['banner', 'header'],
@@ -32,3 +33,7 @@ export const replaceableRolesMap = new Map<ARIARole, HtmlNode>([
     ['img', 'img'],
     ['log', 'pre'],
 ]);
+
+export function hasLiteralValue(node: TSESTree.JSXAttribute) {
+    return node.value?.type === "Literal" || (node.value?.type === "JSXExpressionContainer" && node.value.expression?.type === "Literal") || false;
+}
