@@ -1,7 +1,8 @@
 import { Rule } from 'eslint';
 import { ARIARole } from '../index';
-import { replaceableRolesMap } from '../utils/utils';
+import {hasLiteralValue, replaceableRolesMap} from '../utils/utils';
 import { TSESTree } from '@typescript-eslint/types';
+import { ErrorMessage } from '../messages/errors';
 
 const promoteSemanticElementsForAccessibility: Rule.RuleModule = {
   meta: {
@@ -18,41 +19,29 @@ const promoteSemanticElementsForAccessibility: Rule.RuleModule = {
       JSXAttribute(node) {
         const attributeNode = node as TSESTree.JSXAttribute;
         const attributeName = attributeNode.name.name;
+        const nodeType = attributeNode.parent as TSESTree.JSXOpeningElement;
+        const nodeName = (nodeType.name as TSESTree.JSXIdentifier).name;
 
         if (['role', 'id'].includes(attributeName as string)) {
-          const attributeValue = attributeNode.value as TSESTree.Literal;
-          const value = attributeValue.value as ARIARole;
-          for (const [role, replacement] of replaceableRolesMap) {
-            if (value === role) {
-              context.report({
-                node,
-                message: `Use <${replacement}> instead of <div ${attributeName}="${role}">`,
-              });
+          if (hasLiteralValue(attributeNode)) {
+            const attributeValue = attributeNode.value?.type === "Literal" ? attributeNode.value as TSESTree.Literal : attributeNode.value?.expression as TSESTree.Literal
+            const value = attributeValue.value as ARIARole;
+            for (const [role, replacement] of replaceableRolesMap) {
+              if (value === role) {
+                context.report({
+                  node,
+                  message: ErrorMessage.PROMOTE_SEMANTIC_ELEMENTS_FOR_ACCESSIBILITY(
+                      replacement,
+                      nodeName,
+                      attributeName as string,
+                      role,
+                  ),
+                });
+              }
             }
           }
         }
       },
-      // JSXOpeningElement(node) {
-      //   const nodeName = node.name.name;
-      //   const attributes = node.attributes;
-      //
-      //   for (const attribute of attributes) {
-      //     const name = attribute.name.name;
-      //
-      //     if (name === 'role') {
-      //       const value = attribute.value.value as ARIARole;
-      //
-      //       for (const [role, replacement] of replaceableRolesMap) {
-      //         if (value === role) {
-      //           context.report({
-      //             node,
-      //             message: `Use <${replacement}> instead of <${nodeName} role="${role}">`,
-      //           });
-      //         }
-      //       }
-      //     }
-      //   }
-      // },
     };
   },
 };
