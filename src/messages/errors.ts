@@ -9,4 +9,5 @@ export const ErrorMessage = {
   ) {
     return `Use <${replacement}> instead of <${nodeName} ${attributeName}="${roleName}">`;
   },
+  REQUIRE_LI_CONTAINER: 'List items must be contained within <ul> or <ol> or <menu> [require-li-container]',
 };
