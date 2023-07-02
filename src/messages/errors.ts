@@ -10,4 +10,5 @@ export const ErrorMessage = {
     return `Use <${replacement}> instead of <${nodeName} ${attributeName}="${roleName}">`;
   },
   REQUIRE_LI_CONTAINER: 'List items must be contained within <ul> or <ol> or <menu> [require-li-container]',
+  NO_BLANK_TARGET: 'For performance and security issues, do not use target="_blank" in your code',
 };
