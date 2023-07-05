@@ -97,5 +97,3 @@ tester.run('require-img-alt', requireImgAlt, {
   ],
 });
 ```
-
-Note: Make sure to adjust the import paths and filenames in the test cases according to your project structure.
