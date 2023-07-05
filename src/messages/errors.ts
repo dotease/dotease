@@ -13,6 +13,15 @@ export const ErrorMessage = {
   NO_INLINE_STYLE:
     'Do not use the style element. Please create a css class or identifier in order to style your ' + 'element',
   NO_BLANK_TARGET: 'For performance and security issues, do not use target="_blank" in your code',
+  NO_DUPLICATE_ATTRIBUTE(
+      attributeDuplicateMap: [string, number][]
+  ): string {
+    let stringOfDuplicates = "";
+    attributeDuplicateMap.forEach(value => {
+      stringOfDuplicates += `- ${value[0]}: ${value[1]} times\n`
+    })
+    return `Your elements cannot have duplicate attributes. Duplicates found:\n${stringOfDuplicates}`
+  },
   NO_OBSOLETE_TAGS(tagName: string, replacement = '', css = false) {
     if (css) {
       return `Use ${replacement} instead of ${tagName}`;

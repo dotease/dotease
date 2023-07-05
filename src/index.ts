@@ -2,6 +2,7 @@
 import { recommended } from './configs/recommended';
 import requireImgAlt from './rules/require-img-alt';
 import promoteSemanticElementsForAccessibility from './rules/promote-semantic-elements-for-accessibility';
+import NoDuplicateAttribute from "./rules/no-duplicate-attribute";
 import noInlineStyle from './rules/no-inline-style';
 import requireLiContainer from './rules/require-li-container';
 import noBlankTarget from './rules/no-blank-target';
@@ -117,6 +118,7 @@ export const rules = {
   'promote-semantic-elements-for-accessibility': promoteSemanticElementsForAccessibility,
   'no-inline-style': noInlineStyle,
   'no-blank-target': noBlankTarget,
+  'no-duplicate-attribute': NoDuplicateAttribute,
   'require-li-container': requireLiContainer,
   'no-obsolete-tags': noObsoleteTags,
   'require-button-type': requireButtonType,
