@@ -2,7 +2,6 @@
 
 > This rule disallows the use of `target="_blank"` in anchor (`<a>`) tags.
 
-- ⭐️ This rule is included in `plugin:eslint/recommended` preset.
 
 This rule prevents the use of `target="_blank"` in anchor tags. Opening links in a new tab without user consent can be disruptive to user experience and may lead to security risks, such as phishing attacks. It is recommended to use appropriate alternative methods to indicate external links, such as adding an icon or text next to the link.
 
