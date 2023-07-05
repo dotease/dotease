@@ -3,9 +3,10 @@ import { recommended } from './configs/recommended';
 import exampleRule from './rules/example-rule';
 import requireImgAlt from './rules/require-img-alt';
 import promoteSemanticElementsForAccessibility from './rules/promote-semantic-elements-for-accessibility';
-import noInlineStyle from "./rules/no-inline-style";
-import noBlankTarget from "./rules/no-blank-target";
+import noInlineStyle from './rules/no-inline-style';
 import requireLiContainer from './rules/require-li-container';
+import noBlankTarget from './rules/no-blank-target';
+import noObsoleteTags from './rules/no-obsolete-tags';
 
 export type ARIARole =
   | 'alert'
@@ -118,6 +119,7 @@ export const rules = {
   'no-inline-style': noInlineStyle,
   'no-blank-target': noBlankTarget,
   'require-li-container': requireLiContainer,
+  'no-obsolete-tags': noObsoleteTags,
 };
 
 module.exports = {

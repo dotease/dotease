@@ -86,6 +86,7 @@
     "@typescript-eslint/utils": "5.55.0",
     "es-html-parser": "^0.0.8",
     "eslint-html-parser": "^6.8.2",
-    "eslint-plugin-html": "^7.1.0"
+    "eslint-plugin-html": "^7.1.0",
+    "parse5": "^7.1.2"
   }
 }

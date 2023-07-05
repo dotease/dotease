@@ -1,4 +1,4 @@
-# dotease/require-img-alt
+# @dotease/require-img-alt
 
 > This rule enforces the presence of `alt` attribute in `<img>` tags in JSX.
 
