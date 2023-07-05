@@ -11,4 +11,5 @@ export const ErrorMessage = {
   },
   NO_INLINE_STYLE: 'Do not use the style element. Please create a css class or identifier in order to style your ' +
       'element',
+  NO_BLANK_TARGET: 'For performance and security issues, do not use target="_blank" in your code',
 };
