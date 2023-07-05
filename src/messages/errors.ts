@@ -10,4 +10,10 @@ export const ErrorMessage = {
     return `Use <${replacement}> instead of <${nodeName} ${attributeName}="${roleName}">`;
   },
   NO_BLANK_TARGET: 'For performance and security issues, do not use target="_blank" in your code',
+  NO_OBSOLETE_TAGS(tagName: string, replacement = '', css = false) {
+    if (css) {
+      return `Use ${replacement} instead of ${tagName}`;
+    }
+    return `Use <${replacement}> instead of <${tagName}>`;
+  },
 };
