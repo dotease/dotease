@@ -118,7 +118,7 @@ export const rules = {
   'promote-semantic-elements-for-accessibility': promoteSemanticElementsForAccessibility,
   'no-inline-style': noInlineStyle,
   'no-blank-target': noBlankTarget,
-  'no-duplicate-attribute': NoDuplicateAttribute
+  'no-duplicate-attribute': NoDuplicateAttribute,
   'require-li-container': requireLiContainer,
   'no-obsolete-tags': noObsoleteTags,
   'require-button-type': requireButtonType,
