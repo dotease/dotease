@@ -1,4 +1,4 @@
-# dotease/no-inline-style
+# @dotease/no-inline-style
 
 > This rule disallows the use of inline styles in JSX.
 

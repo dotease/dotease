@@ -1,4 +1,4 @@
-# dotease/require-li-container
+# @dotease/require-li-container
 
 > This rule enforces that `<li>` elements are wrapped inside a valid container element.
 

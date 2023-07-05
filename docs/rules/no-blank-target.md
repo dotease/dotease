@@ -1,4 +1,4 @@
-# dotease/no-blank-target
+# @dotease/no-blank-target
 
 > This rule disallows the use of `target="_blank"` in anchor (`<a>`) tags.
 

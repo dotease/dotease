@@ -1,4 +1,4 @@
-# dotease/promote-semantic-elements-for-accessibility
+# @dotease/promote-semantic-elements-for-accessibility
 
 > This rule promotes the use of semantic elements for improved accessibility.
 
