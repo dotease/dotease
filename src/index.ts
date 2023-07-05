@@ -3,6 +3,7 @@ import { recommended } from './configs/recommended';
 import exampleRule from './rules/example-rule';
 import requireImgAlt from './rules/require-img-alt';
 import promoteSemanticElementsForAccessibility from './rules/promote-semantic-elements-for-accessibility';
+import noInlineStyle from "./rules/no-inline-style";
 import noBlankTarget from "./rules/no-blank-target";
 
 export type ARIARole =
@@ -113,6 +114,7 @@ export const rules = {
   'example-rule': exampleRule,
   'require-img-alt': requireImgAlt,
   'promote-semantic-elements-for-accessibility': promoteSemanticElementsForAccessibility,
+  'no-inline-style': noInlineStyle,
   'no-blank-target': noBlankTarget,
 };
 
