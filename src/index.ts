@@ -5,6 +5,7 @@ import requireImgAlt from './rules/require-img-alt';
 import promoteSemanticElementsForAccessibility from './rules/promote-semantic-elements-for-accessibility';
 import noInlineStyle from "./rules/no-inline-style";
 import noBlankTarget from "./rules/no-blank-target";
+import requireLiContainer from './rules/require-li-container';
 
 export type ARIARole =
   | 'alert'
@@ -116,6 +117,7 @@ export const rules = {
   'promote-semantic-elements-for-accessibility': promoteSemanticElementsForAccessibility,
   'no-inline-style': noInlineStyle,
   'no-blank-target': noBlankTarget,
+  'require-li-container': requireLiContainer,
 };
 
 module.exports = {
