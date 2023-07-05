@@ -10,4 +10,13 @@ export const ErrorMessage = {
     return `Use <${replacement}> instead of <${nodeName} ${attributeName}="${roleName}">`;
   },
   NO_BLANK_TARGET: 'For performance and security issues, do not use target="_blank" in your code',
+  NO_DUPLICATE_ATTRIBUTE(
+      attributeDuplicateMap: [string, number][]
+  ): string {
+    let stringOfDuplicates = "";
+    attributeDuplicateMap.forEach(value => {
+      stringOfDuplicates += `- ${value[0]}: ${value[1]} times\n`
+    })
+    return `Your elements cannot have duplicate attributes. Duplicates found:\n${stringOfDuplicates}`
+  }
 };

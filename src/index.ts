@@ -4,6 +4,7 @@ import exampleRule from './rules/example-rule';
 import requireImgAlt from './rules/require-img-alt';
 import promoteSemanticElementsForAccessibility from './rules/promote-semantic-elements-for-accessibility';
 import noBlankTarget from "./rules/no-blank-target";
+import NoDuplicateAttribute from "./rules/no-duplicate-attribute";
 
 export type ARIARole =
   | 'alert'
@@ -114,6 +115,7 @@ export const rules = {
   'require-img-alt': requireImgAlt,
   'promote-semantic-elements-for-accessibility': promoteSemanticElementsForAccessibility,
   'no-blank-target': noBlankTarget,
+  'no-duplicate-attribute': NoDuplicateAttribute
 };
 
 module.exports = {
