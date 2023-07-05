@@ -1,6 +1,6 @@
 import { RuleTester } from 'eslint';
-import requireImgAlt from '../../src/rules/require-img-alt';
 import { ErrorMessage } from '../../src/messages/errors';
+import noInlineStyle from "../../src/rules/no-inline-style";
 
 const tester = new RuleTester({
     parser: require.resolve('@typescript-eslint/parser'),
@@ -9,7 +9,7 @@ const tester = new RuleTester({
     },
 });
 
-tester.run('require-img-alt', requireImgAlt, {
+tester.run('no-inline-style', noInlineStyle, {
     valid: [
         {
             filename: 'valid.tsx',
