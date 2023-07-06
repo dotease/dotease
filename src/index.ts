@@ -8,6 +8,7 @@ import requireLiContainer from './rules/require-li-container';
 import noBlankTarget from './rules/no-blank-target';
 import requireButtonType from './rules/require-button-type';
 import noObsoleteTags from './rules/no-obsolete-tags';
+import noDuplicateId from "./rules/no-duplicate-id";
 
 export type ARIARole =
   | 'alert'
@@ -122,6 +123,7 @@ export const rules = {
   'require-li-container': requireLiContainer,
   'no-obsolete-tags': noObsoleteTags,
   'require-button-type': requireButtonType,
+  'no-duplicate-id': noDuplicateId,
 };
 
 module.exports = {

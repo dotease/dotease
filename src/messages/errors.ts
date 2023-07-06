@@ -29,4 +29,11 @@ export const ErrorMessage = {
     return `Use <${replacement}> instead of <${tagName}>`;
   },
   REQUIRE_BUTTON_TYPE: 'Button elements must have a type attribute [require-button-type]',
+  NO_DUPLICATE_ID(idList: string[]): string {
+    let stringOfDuplicates = "";
+    idList.forEach(value => {
+      stringOfDuplicates += `- ${value}\n`
+    })
+    return `Do not duplicate "id" attributes in your code. Duplicates found:\n${stringOfDuplicates}`
+  },
 };
